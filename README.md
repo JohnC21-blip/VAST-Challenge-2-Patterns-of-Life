@@ -16,3 +16,14 @@ This repository contains the submission materials and interactive analysis inter
 | `index.html` | Completed VAST Challenge entry form (submission document). |
 | `instructions.html` | Official submission instructions (for reference). |
 
+
+## Running the visualisation interface
+
+```shell
+    cd frontend
+    npm install
+    npm run dev
+```
+
+Node3.js has to be install in the device or eventually use Codespaces on Github to run the project
+
