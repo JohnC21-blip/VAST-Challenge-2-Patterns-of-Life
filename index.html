@@ -120,6 +120,24 @@ a:visited {
     max-width: 88%;
 }
 
+.figureRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10pt;
+}
+
+.figureRow .figureWrap {
+    flex: 1 1 45%;
+    max-width: 45%;
+}
+
+.figureRow.single .figureWrap {
+    flex: 1 1 30%;
+    max-width: 30%;
+}
+
 .figureCaption {
     text-align: center;
     font-size: 11pt;
@@ -161,7 +179,7 @@ a:visited {
             <li><b>Flask</b> - Backend service to expose processed data to the interface</li>
         </ul>
         <p><b>Approximately how many hours were spent working on this submission in total?</b> +/- 150 hours</p>
-        <p><b>Video: https://www.youtube.com/watch?v=YACqwysZJf0</b> </p>
+        <p><b>Video: <a href="https://www.youtube.com/watch?v=YACqwysZJf0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=YACqwysZJf0</a></b></p>
     </section>
 
     <hr class="sectionDivider">
@@ -233,28 +251,38 @@ a:visited {
         <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (6).jpeg" alt="Figure Q2-7 - Interface plot"></p>
     </div>
 
-    <div class="questionBlock">
-        <p class="questionTitle">3 - Two participants with different routines.</p>
-        <p class="questionPrompt">Participants have given permission to have their daily routines captured. Choose two different participants with different routines and describe their daily patterns, with supporting evidence. Limit your response to 10 images and 500 words.</p>
-        <p class="answerTitle">Answer (Q3): <span class="wordCount" data-question="3"></span></p>
-        <p><b>Plot usage:</b> Timeline and routine-comparison plots are used to contrast time-of-day activity, movement regularity, and destination type</p>
-        <p><b>Short description:</b> One participant follows a stable work-driven routine, while the other has a more flexible home-and-leisure pattern</p>
-        <p>The interface participant-comparison plots show two clearly different daily routines. The first participant follows a <b>work-structured pattern</b>: repeated daytime movement, stable transitions between home and work zones, and regular activity blocks aligned with weekday rhythm. This profile is characterized by predictable timing and lower dispersion across leisure-heavy venue types.</p>
-        <p>The second participant exhibits a <b>home-and-leisure dominant pattern</b>: longer residence periods, more irregular transitions, and stronger activity outside classic work-centered windows. The timeline and routine matrices indicate that this participant has broader variation in active hours and destination types, consistent with a less commute-driven schedule.</p>
-        <p>These two cases demonstrate that city behavior cannot be captured by a single “average” routine. One routine is periodic and commute-oriented; the other is more flexible and socially/leisure distributed. The contrast is persistent across daily and monthly interface views, making them a strong pair for explaining heterogeneous patterns of life.</p>
+<div class="questionBlock">
+    <p class="questionTitle">3 - Two participants with different routines.</p>
+    <p class="questionPrompt">Participants have given permission to have their daily routines captured. Choose two different participants with different routines and describe their daily patterns, with supporting evidence. Limit your response to 10 images and 500 words.</p>
+    <p class="answerTitle">Answer (Q3): <span class="wordCount" data-question="3"></span></p>
 
-        <p><b>1.</b> <b>Figure Q3-1</b> shows Participant A's regular home-work-home cycle across weekdays with clear periodicity. It is used to establish the structured routine profile and the dominant commute rhythm</p>
-        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (1).jpeg" alt="Figure Q3-1 - Interface plot"></p>
+    <p><b>Plot usage:</b> Heatmap routine matrices with dual-channel encoding (hue for venue type, intensity for check-in volume) compare weekly and monthly patterns side by side for two participants with clearly distinct behavioral profiles.</p>
+    <p><b>Short description:</b> Participant #41 is work-and-social anchored with long, active evenings; Participant #100 is a strict homebody with a short, early-finishing workday and almost no evening activity on weekdays.</p>
 
-        <p><b>2.</b> <b>Figure Q3-2</b> confirms low timing variation for Participant A, with repeated activity blocks at similar hours. This supports high routine stability and predictable daily transitions</p>
-        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (2).jpeg" alt="Figure Q3-2 - Interface plot"></p>
-
-        <p><b>3.</b> <b>Figure Q3-3</b> shows Participant B with longer home stays and fewer strictly commute-centered transitions. It captures the second behavioral type: less rigid scheduling and broader non-work activity periods</p>
-        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (3).jpeg" alt="Figure Q3-3 - Interface plot"></p>
-
-        <p><b>4.</b> <b>Figure Q3-4</b> shows broader hour and destination variation for Participant B across days and contexts. This confirms a flexible routine profile and explains the contrast with Participant A's periodic behavior</p>
-        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (4).jpeg" alt="Figure Q3-4 - Interface plot"></p>
+    <p><b>1.</b> Two participants were selected from the dropdown (Figure Q3-1). <b>Participant #41</b> is 41 years old, HighSchoolOrCollege, joviality 0.86. <b>Participant #100</b> is 29 years old, Low education, joviality 0.14. The contrast in joviality is reflected directly in their activity patterns, as shown below.</p>
+    <div class="figureRow single">
+        <div class="figureWrap compact"><img src="figures/q3_figures/00_2participants.png" alt="Figure Q3-1 - Participant selection dropdowns showing #41 and #100"></div>
     </div>
+
+    <p><b>2.</b> The heatmap encoding is read as follows: <b>hue</b> identifies venue type (blue = Apartment, purple = Workplace, red = Restaurant, pink = Pub) and <b>intensity</b> encodes check-in volume — darker, more saturated cells mean more visits in that hour slot. Both channels are readable simultaneously without one masking the other.</p>
+    <div class="figureRow single">
+        <div class="figureWrap compact"><img src="figures/q3_figures/03_intensity.png" alt="Figure Q3-2 - Intensity encoding legend: light to dark means more check-ins"></div>
+        <div class="figureWrap compact"><img src="figures/q3_figures/04_hue_1.png" alt="Figure Q3-3 - Hue legend: Apartment (blue) and Workplace (purple)"></div>
+        <div class="figureWrap compact"><img src="figures/q3_figures/05_hue_2.png" alt="Figure Q3-4 - Hue legend: Restaurant (red) and Pub (pink)"></div>
+    </div>
+
+    <p><b>3.</b> <b>Figure Q3-5 and Q3-6</b> show the aggregated weekly daily routine for each participant. <b>#41</b> starts work at 7h, takes a restaurant lunch at 13h (128 check-ins, workplace dominant), and remains highly active from 16h through 23h every day — a wide band of apartment, restaurant, and pub activity, including weekends. <b>#100</b> starts slightly later at 8h, also lunches at 13h but with fewer check-ins (65 total, split between restaurant and pub), and crucially, <b>stops all activity by 19–20h on weekdays</b>. Tuesday through Friday show almost no evening presence. Monday and Sunday are the clear exceptions, with scattered activity extending later — suggesting social engagements rather than routine.</p>
+    <div class="figureRow">
+        <div class="figureWrap compact"><img src="figures/q3_figures/06_daily_1.png" alt="Figure Q3-5 - Participant #41 weekly daily routine heatmap"></div>
+        <div class="figureWrap compact"><img src="figures/q3_figures/07_daily_2.png" alt="Figure Q3-6 - Participant #100 weekly daily routine heatmap"></div>
+    </div>
+
+    <p><b>4.</b> <b>Figure Q3-7 and Q3-8</b> show March 2022 at day resolution. In the monthly view, hue and intensity are merged into a single combined signal — a deliberate design refinement that reduces visual noise and makes it easier to read venue type and volume together at a glance. This view confirms the contrast: <b>#41</b> fills almost every slot from 12h to 23h across the whole month. <b>#100</b> displays a clear <i>I-beam</i> shape — a narrow purple column around 8h, a red spike at lunch, and a blue return home at 19h — with very little outside that skeleton. #100's work-like activity on Sunday mornings (visible as isolated purple cells) further distinguishes him as someone with an irregular but compressed schedule rather than a social one.</p>
+    <div class="figureRow">
+        <div class="figureWrap compact"><img src="figures/q3_figures/09_01month.png" alt="Figure Q3-7 - Participant #41 March 2022 monthly routine"></div>
+        <div class="figureWrap compact"><img src="figures/q3_figures/10_02month.png" alt="Figure Q3-8 - Participant #100 March 2022 monthly routine"></div>
+    </div>
+</div>
 
     <div class="questionBlock">
         <p class="questionTitle">4 - Pattern changes across the dataset span.</p>
