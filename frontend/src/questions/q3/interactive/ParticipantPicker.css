@@ -1,0 +1,45 @@
+.participantPicker {
+  display     : grid;
+  grid-template-columns: auto repeat(2, minmax(220px, 1fr));
+  align-items : center;
+  gap         : 10px;
+  width       : 100%;
+  padding     : 0;
+  background  : transparent;
+  border-bottom : 0;
+}
+
+.pickerLabel {
+  color       : var(--muted);
+  font-size   : 0.72rem;
+  font-weight : 800;
+  line-height : 1;
+}
+
+.pickerSlot {
+  display     : grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items : center;
+  min-width   : 0;
+}
+
+.participantPicker select {
+  min-width     : 0;
+  width         : 100%;
+  height        : 30px;
+  padding       : 0 9px;
+  border        : 1px solid var(--border);
+  border-radius : 6px;
+  color         : var(--heading);
+  background    : var(--surface);
+  font-size     : 0.76rem;
+  font-weight   : 750;
+  cursor        : pointer;
+  max-width     : none;
+}
+
+@media (max-width: 860px) {
+  .participantPicker {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

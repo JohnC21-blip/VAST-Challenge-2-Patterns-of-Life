@@ -1,0 +1,12 @@
+.compositionPanel {
+    grid-area: composition;
+}
+
+.compositionChart.hasDetail {
+    --detail-height: 210px;
+}
+
+.compositionChart .pointGroup rect:not(.hitbox) {
+    stroke: rgb(255 255 255 / 0.78);
+    stroke-width: 1;
+}

@@ -1,0 +1,23 @@
+.activityTimelineWrapper {
+  display        : flex;
+  flex-direction : column;
+  gap            : 8px;
+  position       : relative;
+}
+
+.activityTimelineStatus {
+  font-size  : var(--font-size-sm);
+  color      : var(--muted);
+  min-height : 18px;
+  padding    : 0;
+  font-weight: 700;
+}
+
+.activityTimelineChart {
+  width         : 100%;
+  min-height    : 0;
+  background    : transparent;
+  border        : 0;
+  border-radius : 0;
+  overflow      : visible;
+}

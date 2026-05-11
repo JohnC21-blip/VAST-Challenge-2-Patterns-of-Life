@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAST Challenge 2022 - Challenge 2</title>
+<style>
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    color: black;
+    margin: 1in;
+    line-height: 1.15;
+}
+
+.page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: Calibri, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 0;
+}
+
+h3 {
+    font-family: Calibri, sans-serif;
+    font-size: 13.5pt;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+
+p {
+    margin: 0 0 10pt 0;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
+}
+
+.hero {
+    padding-bottom: 0;
+    margin-bottom: 10pt;
+}
+
+.center {
+    text-align: center;
+}
+
+.meta {
+    margin: 0 0 10pt 0;
+}
+
+.toolList {
+    margin: 0 0 10pt 18pt;
+    padding: 0;
+}
+
+.toolList li {
+    margin: 0 0 4pt 0;
+}
+
+.sectionDivider {
+    border: none;
+    border-top: 1pt solid black;
+    margin: 10pt 0 10pt 0;
+}
+
+.questionSectionTitle {
+    margin: 0 0 8pt 0;
+}
+
+.questionBlock {
+    border: none;
+    margin-top: 10pt;
+    padding: 0;
+}
+
+.questionTitle {
+    font-weight: 700;
+    color: #1f4e79;
+    font-style: italic;
+    margin-bottom: 6pt;
+}
+
+.questionPrompt {
+    color: #1f4e79;
+    font-style: italic;
+    margin-bottom: 10pt;
+}
+
+.answerTitle {
+    font-weight: 700;
+    color: black;
+    margin-bottom: 6pt;
+}
+
+.figureWrap {
+    text-align: center;
+    margin-bottom: 10pt;
+}
+
+.figureWrap img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.figureWrap.compact img {
+    max-width: 88%;
+}
+
+.figureCaption {
+    text-align: center;
+    font-size: 11pt;
+    font-style: italic;
+    font-weight: bold;
+    color: #333333;
+    margin: -2pt 0 10pt 0;
+}
+
+.small {
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    color: black;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+    <section class="hero center">
+        <h2>Entry Name: Eyes of the City</h2>
+        <h2>VAST Challenge 2022<br><u>Challenge 2: Patterns of Life</u></h2>
+    </section>
+
+    <section class="meta">
+        <h3>Team Members</h3>
+        <p><b>Fabio Dollaku</b>, University of Luxembourg, E-mail: <a href="mailto:fabio.dollaku.001@student.uni.lu">fabio.dollaku.001@student.uni.lu</a></p>
+        <p><b>João Cláudio Castro Ribeiro</b>, University of Luxembourg, E-mail: <a href="mailto:joao.castro.001@student.uni.lu">joao.castro.001@student.uni.lu</a></p>
+        <p><b>Maurice Lesch</b>, University of Luxembourg, E-mail: <a href="mailto:maurice.lesch.001@student.uni.lu">maurice.lesch.001@student.uni.lu</a></p>
+        <p><b>Kevin Moreira da Silva</b>, University of Luxembourg, E-mail: <a href="mailto:kevin.moreira.001@student.uni.lu">kevin.moreira.001@student.uni.lu</a></p>
+        <p><b>Student Team:</b> YES</p>
+        <p><b>Tools Used:</b></p>
+        <ul class="toolList">
+            <li><b>Visual Studio Code</b> - Main editor for coding, debugging, and report preparation</li>
+            <li><b>GitHub</b> - Version control and team collaboration for code integration</li>
+            <li><b>Node3 JS</b> - Runtime used to execute frontend tooling and project scripts</li>
+            <li><b>Vite</b> - Development server and build tool for the interactive interface</li>
+            <li><b>Redux</b> - Central state management for filters, selections, and linked views</li>
+            <li><b>Flask</b> - Backend service to expose processed data to the interface</li>
+        </ul>
+        <p><b>Approximately how many hours were spent working on this submission in total?</b> +/- 150 hours</p>
+        <p><b>Video: https://www.youtube.com/watch?v=YACqwysZJf0</b> </p>
+    </section>
+
+    <hr class="sectionDivider">
+    <h3 class="questionSectionTitle">Questions</h3>
+
+    <div class="questionBlock">
+        <p class="questionTitle">1 - Characterize the distinct areas of the city and provide rationale with supporting data.</p>
+        <p class="questionPrompt">Assuming the volunteers are representative of the city's population, characterize the distinct areas of the city that you identify. For each area you identify, provide your rationale and supporting data. Limit your response to 10 images and 500 words.</p>
+        <p class="answerTitle">Answer (Q1): <span class="wordCount" data-question="1"></span></p>
+        <p><b>Plot usage:</b> Cluster maps, composition views, and zone overlays are used to compare residential, work, and service concentration by area</p>
+        <p><b>Short description:</b> The city is organized into high-activity commercial cores and wider residential belts, with mixed-use transition edges</p>
+        <p>The city can be divided into seven distinct functional areas. We clustered the city using an 80x80 grid. Each grid cell was classified by its dominant driver, such as apartments, jobs/employers, or schools/restaurants. A driver had to represent at least 45% of activity and have 12% higher points than the next driver. Adjacent cells with the same dominant driver were grouped into districts.</p>
+        <p>The Central Commercial District has the strongest work center, with 991 points, 69.6% work share, and 2.01 jobs per apartment.</p>
+        <p>The NorthWest Commercial District is a secondary work-oriented area, with 718 points, 64.3% work share, and 1.56 jobs per apartment.</p>
+        <p>The SouthEast Commercial District is smaller but still work-oriented, with 237 points, 62% work share, and 1.43 jobs per apartment.</p>
+        <p>The NorthWest Residential District is strongly housing-dominated, with 81.2% home share, 18% work share, and 0.18 jobs per apartment.</p>
+        <p>The East Residential District is also mainly residential, with 80.8% home share, 18% work share, and 0.19 jobs per apartment.</p>
+        <p>The Central Residential District is a large housing area, with 524 points, 76.7% home share, and 0.24 jobs per apartment.</p>
+        <p>The North Residential District is more mixed but still residential, with 61.2% home share, 38% work share, and 0.52 jobs per apartment, suggesting a mixed transition area.</p>
+        <p>Overall, the city is organized into commercial cores, surrounded by residential belts. The cluster map shows the spatial grouping, while the composition and evidence views justify each classification with activity, home-share, work-share and jobs-per-apartment data. Leisure activity remains low across all districts, so no area is primarily leisure-based.</p>
+
+        <p><b>1.</b> <b>Figure Q1-1</b> shows the full spatial clustering of the city (basis: 80x80 grid & dominant-driver rule). It provides the baseline view of the seven identified districts and shows the main separation between commercial cores and residential belts</p>
+        <p class="figureWrap compact"><img src="figures/q1_figures/q1-figure (1).jpeg" alt="Figure Q1-1 - Interface plot"></p>
+
+        <p><b>2.</b> <b>Figure Q1-2</b> focuses on the Central Commercial District, the strongest work-oriented area. With 991 activity points, 69.6% work share, and 2.01 jobs per apartment, it confirms the central core as the city’s main employment and daytime destination zone</p>
+        <p class="figureWrap compact"><img src="figures/q1_figures/q1-figure (2).jpeg" alt="Figure Q1-2 - Interface plot"></p>
+
+        <p><b>3.</b> <b>Figure Q1-3</b> highlights the NorthWest Commercial District, a secondary commercial hub. Its 718 points, 64.3% work share, and 1.56 jobs per apartment support a polycentric structure, where work activity is distributed beyond the central core</p>
+        <p class="figureWrap compact"><img src="figures/q1_figures/q1-figure (3).jpeg" alt="Figure Q1-3 - Interface plot"></p>
+
+        <p><b>4.</b> <b>Figure Q1-4</b> emphasizes the clearest housing-dominant areas, especially the NorthWest Residential and East Residential districts. Both have home shares around 81% and very low jobs-per-apartment values, showing where residential trip origins are likely concentrated</p>
+        <p class="figureWrap compact"><img src="figures/q1_figures/q1-figure (4).jpeg" alt="Figure Q1-4 - Interface plot"></p>
+
+        <p><b>5.</b> <b>Figure Q1-5</b> shows the more mixed residential-edge especially the North Residential District. Its 61.2% home share and 38% work share indicate a mixed transition zone between housing belts and employment areas, where land use changes gradually</p>
+        <p class="figureWrap compact"><img src="figures/q1_figures/q1-figure (5).jpeg" alt="Figure Q1-5 - Interface plot"></p>
+
+
+    </div>
+
+    <div class="questionBlock">
+        <p class="questionTitle">2 - Busiest areas in Engagement and traffic bottlenecks.</p>
+        <p class="questionPrompt">Where are the busiest areas in Engagement? Are there traffic bottlenecks that should be addressed? Explain your rationale. Limit your response to 10 images and 500 words.</p>
+        <p class="answerTitle">Answer (Q2): <span class="wordCount" data-question="2"></span></p>
+        <p><b>Plot usage:</b> Heatmaps, flow links, and corridor comparisons are used to detect recurring hotspots and overloaded routes by time</p>
+        <p><b>Short description:</b> Engagement is concentrated in few hubs and corridors, creating predictable bottlenecks during peak hours</p>
+        <p>The interface traffic plots indicate that Engagement activity is <b>highly concentrated</b> in a small number of destination clusters and corridors, rather than evenly spread across the city. The hotspot figures show repeated high-load venues (especially pub/restaurant anchors), while corridor charts reveal that many trips are directed through only a few strong bidirectional links.</p>
+        <p>This concentration creates clear bottleneck behavior: a limited set of links carries a disproportionate share of movement, so any local disruption can quickly propagate delays. The hourly and weekday-time plots reinforce this diagnosis by showing synchronized peak waves (commute and after-work periods), where inflow/outflow surges overlap on the same corridors.</p>
+        <p>Based on the interface evidence, bottleneck mitigation should prioritize (1) the top pressure hubs, (2) the highest-flow corridor pairs between those hubs, and (3) peak-hour management where arrival surges exceed local handling capacity. In short, the city has a corridor-dominated movement pattern with identifiable pressure points that should be addressed first.</p>
+
+        <p><b>1.</b> <b>Figure Q2-1</b> maps the strongest Engagement hotspots and shows that demand is highly concentrated in specific clusters. It is used to define the primary high-pressure areas that need priority monitoring. The more lager the corridor, the more higher the traffic bottleneck</p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure.jpeg" alt="Figure Q2-1 - Interface plot"></p>
+
+        <p><b>2.</b> <b>Figure Q2-2</b> shows repeated inflows to the same high-demand venues across different time windows. This indicates persistent hotspot behavior, not isolated one-time crowding events</p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (1).jpeg" alt="Figure Q2-2 - Interface plot"></p>
+
+        <p><b>3.</b> <b>Figure Q2-3</b> visualizes corridor concentration where many trips are directed through a limited route set. It identifies the structural backbone of movement and potential single points of failure. The color scale represents the peak load of each pub. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Peak&nbsp;Load</mi><mo>=</mo><mfrac><mi>Peak Arrivals</mi><mi>Capacity</mi></mfrac></mrow></math></p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (2).jpeg" alt="Figure Q2-3 - Interface plot"></p>
+
+        <p><b>4.</b> <b>Figure Q2-4</b> pinpoints the most overloaded links where route load is clearly disproportionate to the rest of the network. These links represent the first bottlenecks to target with traffic-management actions. The color scale shows the departure of the indicated location to the arrival of the indicated location </p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (3).jpeg" alt="Figure Q2-4 - Interface plot"></p>
+
+        <p><b>5.</b> <b>Figure Q2-5</b> confirms synchronized peak periods where inflows and outflows stack on the same corridors. This timing overlap explains why delays intensify rapidly during known peak windows</p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (4).jpeg" alt="Figure Q2-5 - Interface plot"></p>
+
+        <p><b>6.</b> <b>Figure Q2-6</b> supports intervention prioritization by showing which hubs experience the highest pressure during commute and after-work periods. It is used to align mitigation actions with the highest-impact time and place. <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Pressure&nbsp;Ratio</mi><mo>=</mo><mi>Total&nbsp;Load</mi><mo>=</mo><mfrac><mi>Number of check-ins</mi><mi>Capacity</mi></mfrac></mrow></math></p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (5).jpeg" alt="Figure Q2-6 - Interface plot"></p>
+
+        <p><b>7.</b> <b>Figure Q2-7</b> summarizes the corridor-dominated movement pattern and consolidates the final set of pressure points. It provides the decision view for selecting first-round bottleneck fixes. The color scale represents the number of trips during a specific time period </p>
+        <p class="figureWrap compact"><img src="figures/q2_figures/q2-figure (6).jpeg" alt="Figure Q2-7 - Interface plot"></p>
+    </div>
+
+    <div class="questionBlock">
+        <p class="questionTitle">3 - Two participants with different routines.</p>
+        <p class="questionPrompt">Participants have given permission to have their daily routines captured. Choose two different participants with different routines and describe their daily patterns, with supporting evidence. Limit your response to 10 images and 500 words.</p>
+        <p class="answerTitle">Answer (Q3): <span class="wordCount" data-question="3"></span></p>
+        <p><b>Plot usage:</b> Timeline and routine-comparison plots are used to contrast time-of-day activity, movement regularity, and destination type</p>
+        <p><b>Short description:</b> One participant follows a stable work-driven routine, while the other has a more flexible home-and-leisure pattern</p>
+        <p>The interface participant-comparison plots show two clearly different daily routines. The first participant follows a <b>work-structured pattern</b>: repeated daytime movement, stable transitions between home and work zones, and regular activity blocks aligned with weekday rhythm. This profile is characterized by predictable timing and lower dispersion across leisure-heavy venue types.</p>
+        <p>The second participant exhibits a <b>home-and-leisure dominant pattern</b>: longer residence periods, more irregular transitions, and stronger activity outside classic work-centered windows. The timeline and routine matrices indicate that this participant has broader variation in active hours and destination types, consistent with a less commute-driven schedule.</p>
+        <p>These two cases demonstrate that city behavior cannot be captured by a single “average” routine. One routine is periodic and commute-oriented; the other is more flexible and socially/leisure distributed. The contrast is persistent across daily and monthly interface views, making them a strong pair for explaining heterogeneous patterns of life.</p>
+
+        <p><b>1.</b> <b>Figure Q3-1</b> shows Participant A's regular home-work-home cycle across weekdays with clear periodicity. It is used to establish the structured routine profile and the dominant commute rhythm</p>
+        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (1).jpeg" alt="Figure Q3-1 - Interface plot"></p>
+
+        <p><b>2.</b> <b>Figure Q3-2</b> confirms low timing variation for Participant A, with repeated activity blocks at similar hours. This supports high routine stability and predictable daily transitions</p>
+        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (2).jpeg" alt="Figure Q3-2 - Interface plot"></p>
+
+        <p><b>3.</b> <b>Figure Q3-3</b> shows Participant B with longer home stays and fewer strictly commute-centered transitions. It captures the second behavioral type: less rigid scheduling and broader non-work activity periods</p>
+        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (3).jpeg" alt="Figure Q3-3 - Interface plot"></p>
+
+        <p><b>4.</b> <b>Figure Q3-4</b> shows broader hour and destination variation for Participant B across days and contexts. This confirms a flexible routine profile and explains the contrast with Participant A's periodic behavior</p>
+        <p class="figureWrap compact"><img src="figures/q3_figures/q3-figure (4).jpeg" alt="Figure Q3-4 - Interface plot"></p>
+    </div>
+
+    <div class="questionBlock">
+        <p class="questionTitle">4 - Pattern changes across the dataset span.</p>
+        <p class="questionPrompt">Over the span of the dataset, how do patterns change in the city change? Describe up to 10 significant changes, with supporting evidence. Limit your response to 10 images and 500 words.</p>
+
+        <p class="answerTitle">Answer (Q4): <span class="wordCount" data-question="4"></span></p>
+        <p><b>Plot usage:</b> Monthly heatmaps, trend lines, and stream/network plots are used to track structural changes across 15 months</p>
+        <p><b>Short description:</b> The city shows a few strong early shifts (check-ins, social volume), while core daily rhythms stay stable</p>
+        <p> This approach was applied following Munzner's Nested Model (domain, data abstraction, visual encoding, implementation) and Shneiderman's mantra: Overview First, Zoom and Filter, Details on Demand.</p>
+
+        <p><b>1.</b> <b>Venue check-in volume collapsed after month 1 (Fig 1)</b> March 2022 stands out as visibly darker than every month that followed. From April onward, daily check-ins settled at a lower level and stayed there.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig1_checkin_heatmap.png" alt="Figure 1 - Venue check-in heatmap"></p>
+
+        <p><b>2.</b> <b>Day-1 financial outflow is a structural fixture (Fig 2)</b>. The first day of each month shows a sharp red spike. Shelter and education payments all hit at once. It's not an anomaly; it's the city's financial heartbeat.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig2_moneyflow_heatmap.png" alt="Figure 2 - Moneyflow heatmap"></p>
+
+        <p><b>3.</b> <b>Weekdays earn, weekends spend (Fig 2)</b> Strip out the day-1 spikes and a clear checkerboard appears. Weekdays run net blue (income beats outflows), weekends run red and white. The pattern holds across all 15 months.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig3_residential_mobility.png" alt="Figure 3 - Residential mobility"></p>
+
+        <p><b>4.</b> <b>Almost nobody moved house (Fig 3)</b> Just one participant changed apartments in the entire window, back in April 2022. Everyone else stayed put from month one. The housing market froze almost immediately.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig4_wealth.png" alt="Figure 4 - Wealth over time"></p>
+
+        <p><b>5.</b> <b>Wealth grew in a straight line (Fig 4)</b> Average balance climbed from near zero to roughly 45,000 at a remarkably steady rate, with no seasonal dips and no surges. Earnings and spending stayed in near-perfect balance.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig5_social_network.png" alt="Figure 5 - Social network interactions"></p>
+
+        <p><b>6.</b> <b>Social activity peaked mid-2022, then faded (Fig 5)</b> Monthly interactions jumped from around 200k in March to a peak of 600k in July and August, then gradually fell off. The share of socially active participants dropped from 95% to 87% in April and flatlined. About 130 people quietly checked out of social life after the first month.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig6_social_pairs.png" alt="Figure 6 - Unique social pairs"></p>
+
+        <p><b>7.</b> <b>The social network expanded, then settled (Fig 6)</b> Unique interacting pairs grew from 5,000 in March to 19,000 by July 2022, before drifting back to 17,000 by May 2023. New connections formed quickly through mid-2022, then the network found its shape.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig7_activity_stream.png" alt="Figure 7 - Activity mode stream graph"></p>
+
+        <p><b>8.</b> <b>The daily rhythm never really changed (Fig 7 & 8)</b> Through all of this, the basic shape of daily life stayed remarkably stable: how people divided their time between home, work, transit, restaurants, and recreation. The activity stream graph (Fig 7) and venue check-in proportions (Fig 8) show no meaningful drift in the underlying routine.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig8_venue_stream.png" alt="Figure 8 - Venue check-in stream graph"></p>
+
+        <p><b>9.</b> <b>Trips became more social over time (Fig 9)</b> The share of Recreation (Social Gathering) trips kept rising at the expense of commutes. Even as overall interaction volume dropped, the trips people were taking leaned increasingly social.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig9_travel_stream.png" alt="Figure 9 - Travel purpose stream graph"></p>
+
+        <p><b>10.</b> <b>Rent adjustments happened once and never again (Fig 10)</b> 125 rent adjustment transactions occurred in March 2022 and ~5 in April. From May onward, zero adjustments for 13 consecutive months: entirely consistent with the immobility seen in Fig 3.</p>
+        <p class="figureWrap"><img src="figures/q4_figures/fig10_rent_histogram.png" alt="Figure 10 - Rent adjustment histogram"></p>
+    </div>
+</div>
+
+<script>
+(function () {
+    function countWords(text) {
+        var matches = text.match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g);
+        return matches ? matches.length : 0;
+    }
+
+    var visualDesignNames = {
+        "q1-figure (1).jpeg": "Figure Q1-1 - City zoning overview map",
+        "q1-figure (2).jpeg": "Figure Q1-2 - Central commercial intensity map",
+        "q1-figure (3).jpeg": "Figure Q1-3 - Secondary commercial hub map",
+        "q1-figure (4).jpeg": "Figure Q1-4 - Residential dominance map",
+        "q1-figure (5).jpeg": "Figure Q1-5 - Mixed-use transition map",
+        "q2-figure.jpeg": "Figure Q2-1 - Engagement hotspot map",
+        "q2-figure (1).jpeg": "Figure Q2-2 - Recurrent inflow pattern view",
+        "q2-figure (2).jpeg": "Figure Q2-3 - Corridor concentration map",
+        "q2-figure (3).jpeg": "Figure Q2-4 - Bottleneck link analysis",
+        "q2-figure (4).jpeg": "Figure Q2-5 - Peak-hour congestion view",
+        "q2-figure (5).jpeg": "Figure Q2-6 - Hub pressure prioritization view",
+        "q2-figure (6).jpeg": "Figure Q2-7 - Final bottleneck summary map",
+        "q3-figure (1).jpeg": "Figure Q3-1 - Participant A routine timeline",
+        "q3-figure (2).jpeg": "Figure Q3-2 - Participant A timing stability view",
+        "q3-figure (3).jpeg": "Figure Q3-3 - Participant B routine timeline",
+        "q3-figure (4).jpeg": "Figure Q3-4 - Participant B variability view",
+        "fig1_checkin_heatmap.png": "Figure 1 - Venue check-in heatmap",
+        "fig2_moneyflow_heatmap.png": "Figure 2 - Moneyflow heatmap",
+        "fig3_residential_mobility.png": "Figure 3 - Residential mobility chart",
+        "fig4_wealth.png": "Figure 4 - Wealth over time chart",
+        "fig5_social_network.png": "Figure 5 - Social network interactions chart",
+        "fig6_social_pairs.png": "Figure 6 - Unique social pairs chart",
+        "fig7_activity_stream.png": "Figure 7 - Activity mode stream graph",
+        "fig8_venue_stream.png": "Figure 8 - Venue check-in stream graph",
+        "fig9_travel_stream.png": "Figure 9 - Travel purpose stream graph",
+        "fig10_rent_histogram.png": "Figure 10 - Rent adjustment histogram"
+    };
+
+    var blocks = document.querySelectorAll(".questionBlock");
+    blocks.forEach(function (block, index) {
+        var figures = block.querySelectorAll(".figureWrap");
+        figures.forEach(function (wrap) {
+            var next = wrap.nextElementSibling;
+            var img = wrap.querySelector("img");
+            if (!img) return;
+            var caption = (next && next.classList.contains("figureCaption")) ? next : document.createElement("p");
+            caption.className = "figureCaption";
+            var srcName = decodeURIComponent((img.getAttribute("src") || "").split("/").pop() || "");
+            var captionText = visualDesignNames[srcName] || img.alt || "Figure";
+            captionText = captionText.replace(/Interface\s*plot/gi, "Plot");
+            captionText = captionText.replace(/Interface\s*Figure/gi, "Figure");
+            captionText = captionText.replace(/\bInterface\b/gi, "");
+            captionText = captionText.replace(/\s{2,}/g, " ").trim();
+            caption.textContent = captionText;
+            if (!(next && next.classList.contains("figureCaption"))) {
+                wrap.insertAdjacentElement("afterend", caption);
+            }
+        });
+
+        var target = block.querySelector('.wordCount[data-question="' + (index + 1) + '"]');
+        if (!target) return;
+
+        var textParts = [];
+        var elements = block.querySelectorAll("p:not(.questionTitle):not(.questionPrompt):not(.answerTitle):not(.figureTitle):not(.figureCaption), li");
+        elements.forEach(function (el) {
+            textParts.push(el.textContent || "");
+        });
+
+        var fullText = textParts.join(" ").replace(/\s+/g, " ").trim();
+        target.textContent = countWords(fullText) + " words";
+    });
+})();
+</script>
+
+</body>
+</html>
+
+

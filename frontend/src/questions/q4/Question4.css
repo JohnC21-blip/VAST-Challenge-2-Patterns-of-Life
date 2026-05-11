@@ -1,0 +1,401 @@
+body.isQ4Active {
+    overflow: hidden;
+}
+
+.shell.shellQ4 {
+    display: block;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+body.isQ4Active .shell.shellQ4 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+body.isQ4Active .shell.shellQ4 .content.contentQ4 {
+    height: calc(100vh - var(--nav-height));
+    min-height: calc(100vh - var(--nav-height));
+    overflow: hidden !important;
+}
+
+.shell.shellQ4 .content.contentQ4 {
+    min-height: 0;
+}
+
+.moduleQ4 {
+    height: 100%;
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+.gridQ4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+        "checkin money mobility wealth"
+        "social social pairs pairs"
+        "activity activity rent rent";
+    gap: 12px;
+    width: min(1840px, 100%);
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0 auto;
+}
+
+.gridQ4.hasExpanded {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.gridQ4.hasExpandedLeft {
+    grid-template-areas:
+        "expandedLeft mobility"
+        "expandedLeft wealth"
+        "expandedLeft pairs"
+        "expandedLeft rent";
+}
+
+.gridQ4.hasExpandedRight {
+    grid-template-areas:
+        "checkin expandedRight"
+        "money expandedRight"
+        "social expandedRight"
+        "activity expandedRight";
+}
+
+.gridQ4.hasExpandedLeft.hasExpandedRight {
+    grid-template-areas:
+        "expandedLeft expandedRight"
+        "expandedLeft expandedRight"
+        "expandedLeft expandedRight"
+        "expandedLeft expandedRight";
+}
+
+.q4ChartCard {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    min-width: 0;
+    min-height: 0;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-elevated);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(12px);
+    transition:
+        border-color var(--motion-fast) var(--motion-ease),
+        box-shadow var(--motion-fast) var(--motion-ease);
+    overflow: hidden;
+}
+
+.q4ChartCard:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.q4ChartCard.isHidden {
+    display: none;
+}
+
+.q4ChartCard.isExpandedLeft {
+    grid-area: expandedLeft;
+}
+
+.q4ChartCard.isExpandedRight {
+    grid-area: expandedRight;
+}
+
+.q4ChartCard.isExpanded .cardTitleButton::after {
+    content: "-";
+}
+
+.q4CardTitle {
+    min-height: 32px;
+    margin: 0 0 8px;
+    color: var(--heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.q4CardDesc {
+    display: -webkit-box;
+    margin: -2px 0 10px;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.q4ChartBody {
+    display: grid;
+    place-items: stretch;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.q4Checkin {
+    grid-area: checkin;
+}
+
+.q4Money {
+    grid-area: money;
+}
+
+.q4Wealth {
+    grid-area: wealth;
+}
+
+.q4Social {
+    grid-area: social;
+}
+
+.q4Pairs {
+    grid-area: pairs;
+}
+
+.q4Activity {
+    grid-area: activity;
+}
+
+.q4Mobility {
+    grid-area: mobility;
+}
+
+.q4Rent {
+    grid-area: rent;
+}
+
+.q4VizFrame {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+}
+
+.q4VizStage {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    position: relative;
+}
+
+.q4ChartCard.isExpanded .q4VizStage {
+    align-self: center;
+    justify-self: center;
+    width: min(100%, 980px);
+    height: min(100%, 460px);
+}
+
+.q4ChartCard.isExpanded.q4Checkin .q4VizStage,
+.q4ChartCard.isExpanded.q4Money .q4VizStage {
+    width: min(100%, 920px);
+    height: min(100%, 500px);
+}
+
+.q4ChartCard.isExpanded.q4Social .q4VizStage,
+.q4ChartCard.isExpanded.q4Activity .q4VizStage,
+.q4ChartCard.isExpanded.q4Pairs .q4VizStage,
+.q4ChartCard.isExpanded.q4Rent .q4VizStage {
+    width: min(100%, 1120px);
+    height: min(100%, 500px);
+}
+
+.q4DetailPanel {
+    display: grid;
+    align-content: start;
+    min-height: 112px;
+    height: 112px;
+    overflow: hidden;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgb(255 255 255 / 0.96);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+    transition:
+        border-color var(--motion-fast) var(--motion-ease),
+        background-color var(--motion-fast) var(--motion-ease);
+}
+
+.q4DetailTitle {
+    margin-bottom: 8px;
+    color: var(--heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.q4DetailRows {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 4px 14px;
+    min-width: 0;
+}
+
+.q4DetailRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+    gap: 10px;
+    color: #475569;
+    font-size: 0.84rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.q4DetailRow span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.q4DetailRow strong {
+    flex: 0 0 auto;
+    color: var(--heading);
+    font-weight: 700;
+    text-align: right;
+}
+
+.q4StreamViz {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.q4ModeSelect {
+    position: relative;
+    z-index: 2;
+    justify-self: end;
+    height: 30px;
+    padding: 0 9px;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    color: var(--heading);
+    background: var(--surface) !important;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.82) inset;
+    font-size: 0.72rem;
+    font-weight: 780;
+    cursor: pointer;
+}
+
+@media (max-width: 1260px) {
+    body.isQ4Active {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .shell.shellQ4 {
+        height: auto;
+        overflow: visible;
+    }
+
+    body.isQ4Active .shell.shellQ4 .content.contentQ4 {
+        height: auto;
+        min-height: calc(100vh - var(--nav-height));
+        overflow: visible !important;
+    }
+
+    .moduleQ4 {
+        height: auto;
+    }
+
+    .gridQ4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 300px;
+        grid-template-areas:
+            "checkin money"
+            "mobility wealth"
+            "social social"
+            "pairs pairs"
+            "activity activity"
+            "rent rent";
+        height: auto;
+    }
+
+    .gridQ4.hasExpanded {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(680px, calc(100vh - var(--nav-height) - 94px));
+        grid-template-areas:
+            "expandedLeft";
+    }
+
+    .gridQ4.hasExpanded .q4ChartCard:not(.isExpanded):not(.isHidden) {
+        display: none;
+    }
+
+    .gridQ4.hasExpandedRight {
+        grid-template-areas:
+            "expandedRight";
+    }
+
+    .gridQ4.hasExpandedLeft.hasExpandedRight {
+        grid-template-rows: repeat(2, minmax(620px, calc(100vh - var(--nav-height) - 94px)));
+        grid-template-areas:
+            "expandedLeft"
+            "expandedRight";
+    }
+}
+
+@media (max-width: 960px) {
+    .gridQ4 {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 330px;
+        grid-template-areas:
+            "checkin"
+            "money"
+            "activity"
+            "wealth"
+            "social"
+            "pairs"
+            "mobility"
+            "rent";
+    }
+}
+
+@media (max-width: 760px) {
+    .gridQ4 {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 340px;
+        grid-template-areas:
+            "checkin"
+            "money"
+            "activity"
+            "wealth"
+            "social"
+            "pairs"
+            "mobility"
+            "rent";
+    }
+
+    .gridQ4.hasExpanded {
+        grid-template-rows: minmax(620px, calc(100vh - var(--nav-height) - 94px));
+    }
+
+    .gridQ4.hasExpandedLeft.hasExpandedRight {
+        grid-template-rows: repeat(2, minmax(620px, calc(100vh - var(--nav-height) - 94px)));
+    }
+
+    .q4ModeSelect {
+        position: static;
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+}

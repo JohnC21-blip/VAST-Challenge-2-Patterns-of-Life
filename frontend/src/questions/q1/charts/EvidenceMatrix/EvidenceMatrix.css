@@ -1,0 +1,7 @@
+.evidencePanel {
+    grid-area: evidence;
+}
+
+.evidenceChart.hasDetail {
+    --detail-height: 230px;
+}

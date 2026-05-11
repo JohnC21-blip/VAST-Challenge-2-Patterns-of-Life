@@ -1,0 +1,21 @@
+.activityPanel {
+    grid-area: activity;
+}
+
+.lensChart.hasDetail {
+    --detail-height: 210px;
+}
+
+.lensChart .pointGroup rect:not(.hitbox) {
+    stroke: rgb(255 255 255 / 0.64);
+    stroke-width: 1;
+}
+
+.lensText {
+    fill: #ffffff;
+    font-size: 0.66rem;
+    font-weight: 800;
+    paint-order: stroke;
+    stroke: rgb(15 23 42 / 0.28);
+    stroke-width: 2px;
+}

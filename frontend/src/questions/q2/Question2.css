@@ -1,0 +1,101 @@
+.contentQ2 {
+    overflow: hidden;
+}
+
+.moduleQ2 {
+    height: 100%;
+    min-height: 0;
+}
+
+.gridQ2 {
+    display: grid;
+    grid-template-columns: minmax(500px, 1fr) minmax(300px, 0.5fr) minmax(300px, 0.5fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+    "map hotbars pressureheatmap"
+    "map hourly heatmap";
+    gap: 14px;
+    width: min(1840px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    min-width: 0;
+    min-height: 0;
+}
+
+.gridQ2.hasExpanded {
+    grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: "map expanded";
+}
+
+.mapPanel {
+    grid-area: map;
+}
+
+.hotBarsPanel {
+    grid-area: hotbars;
+}
+
+.hourlyPanel {
+    grid-area: hourly;
+}
+
+.heatmapPanel {
+    grid-area: heatmap;
+}
+
+.pressureHeatmapPanel {
+    grid-area: pressureheatmap;
+}
+
+.mapPanel .cardBody,
+.listPanel .cardBody,
+.hourlyPanel .cardBody,
+.heatmapPanel .cardBody,
+.pressureHeatmapPanel .cardBody {
+    place-items: stretch;
+}
+
+.hourlyPanel {
+    --detail-height: 176px;
+    --chart-width: 620px;
+}
+
+.heatmapPanel {
+    --detail-height: 156px;
+    --chart-width: 600px;
+}
+
+.pressureHeatmapPanel {
+    --detail-height: 156px;
+    --chart-width: 620px;
+}
+
+@media (max-width: 1120px) {
+    .contentQ2 {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .moduleQ2 {
+        height: auto;
+    }
+
+    .gridQ2,
+    .gridQ2.hasExpanded {
+        grid-template-columns: 1fr;
+        grid-template-rows: 560px;
+        grid-auto-rows: 320px;
+        grid-template-areas: none;
+    }
+
+    .mapPanel,
+    .hotBarsPanel,
+    .hourlyPanel,
+    .pressureHeatmapPanel,
+    .heatmapPanel,
+    .mapPanel.isExpanded {
+        grid-area: auto;
+    }
+}

@@ -1,0 +1,68 @@
+:root {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172033;
+    background: #f5f7fb;
+    --background: #f5f7fb;
+    --ink: #172033;
+    --heading: #0f172a;
+    --muted: #64748b;
+    --border: #d9e1ec;
+    --border-strong: #c7d2e1;
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+    --surface-elevated: rgb(255 255 255 / 0.94);
+    --focus: #2563eb;
+    --nav-height: 64px;
+    --font-size-sm: 12px;
+    --motion-duration: 300ms;
+    --motion-fast: var(--motion-duration);
+    --motion-medium: var(--motion-duration);
+    --motion-slow: var(--motion-duration);
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.05), 0 8px 18px rgb(15 23 42 / 0.04);
+    --shadow-md: 0 1px 2px rgb(15 23 42 / 0.06), 0 16px 36px rgb(15 23 42 / 0.08);
+    --shadow-lg: 0 1px 0 rgb(255 255 255 / 0.8) inset, 0 12px 30px rgb(15 23 42 / 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    overflow: hidden;
+    background: var(--background);
+    font-family: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+::view-transition-group(root) {
+    animation-duration: var(--motion-duration);
+    animation-timing-function: var(--motion-ease);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: var(--motion-duration);
+    animation-timing-function: var(--motion-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    ::view-transition-group(root),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 0.01ms !important;
+    }
+}

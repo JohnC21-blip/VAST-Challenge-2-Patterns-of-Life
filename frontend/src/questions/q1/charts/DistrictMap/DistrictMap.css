@@ -1,0 +1,165 @@
+.areaMapFrame {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    place-items: stretch;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.areaMapViewport {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    padding: 4px;
+    background: #ffffff;
+}
+
+.areaMapSvg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    display: block;
+    background: #ffffff;
+}
+
+.areaMapBackground {
+    fill: #ffffff;
+}
+
+.areaMapCanvas {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    pointer-events: none;
+}
+
+.areaMapImage {
+    filter: grayscale(100%);
+    opacity: 0.72;
+}
+
+.areaMapTintLayer,
+.areaMapSelectedLayer {
+    pointer-events: none;
+}
+
+.areaMapSelectedLayer > g {
+    opacity: 0;
+    transition: opacity var(--motion-fast) var(--motion-ease);
+}
+
+.areaMapSelectedLayer > g.isVisible {
+    opacity: 1;
+}
+
+/* Street-coloring overlay SVG — mix-blend-mode is on the HTML element, not inside SVG,
+   so Chromium composites it correctly against the grayscale base map below */
+.areaColorOverlaySvg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    mix-blend-mode: color;
+    pointer-events: none;
+}
+
+/* Selection bounding-box overlay — sits above the color overlay so fills render true color */
+.areaSelectedOverlaySvg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    pointer-events: none;
+}
+
+
+.areaMapCellGroup {
+    cursor: pointer;
+}
+
+.areaMapCellGroup rect {
+    transition: opacity var(--motion-fast) var(--motion-ease);
+}
+
+.areaMapTooltip {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    right: 10px;
+    width: 232px;
+    height: 176px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.areaMapTooltip .tooltipContent {
+    opacity: 1;
+    transition: none;
+}
+
+.areaMapTooltip .tooltipTitle {
+    min-width: 0;
+    height: 20px;
+    font-size: 0.84rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.areaMapTooltip .tooltipRow {
+    min-width: 0;
+    height: 19px;
+    font-size: 0.78rem;
+}
+
+.areaMapTooltip .tooltipRow strong {
+    max-width: 108px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.areaMapLegend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 9px;
+    width: 100%;
+    min-height: 28px;
+    padding: 5px 8px 0;
+    pointer-events: none;
+}
+
+.areaMapLegend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--muted);
+    font-size: 0.66rem;
+    font-weight: 760;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.areaMapLegend svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+}
+
+.areaMapLegend svg > * {
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    paint-order: stroke;
+}

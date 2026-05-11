@@ -1,0 +1,288 @@
+.content {
+    height: calc(100vh - var(--nav-height));
+    padding: 14px;
+    overflow: hidden;
+}
+
+.module {
+    height: 100%;
+    min-height: 0;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    min-width: 0;
+    min-height: 0;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-elevated);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(12px);
+    transition:
+        border-color var(--motion-fast) var(--motion-ease),
+        box-shadow var(--motion-fast) var(--motion-ease);
+}
+
+.card:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.card.isHidden {
+    display: none;
+}
+
+.card.isExpanded {
+    grid-area: expanded;
+}
+
+.cardTitle {
+    min-height: 32px;
+    margin: 0 0 10px;
+    color: var(--heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.cardTitleButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    text-align: left;
+    text-transform: inherit;
+    cursor: pointer;
+}
+
+.cardTitleButton::after {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    background: var(--surface-soft);
+    content: "+";
+}
+
+.card.isExpanded .cardTitleButton::after {
+    content: "-";
+}
+
+.cardTitleButton:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+.cardBody {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.frame {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+}
+
+.frame.hasDetail {
+    grid-template-rows: minmax(0, 1fr) var(--detail-height, 176px);
+    gap: 8px;
+}
+
+.chartSvg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.pointGroup {
+    cursor: pointer;
+}
+
+.pointGroup rect,
+.pointGroup circle,
+.pointGroup text,
+.tooltipContent {
+    transition:
+        opacity var(--motion-fast) var(--motion-ease),
+        fill var(--motion-fast) var(--motion-ease),
+        stroke var(--motion-fast) var(--motion-ease);
+}
+
+.pointGroup:hover rect:not(.hitbox),
+.pointGroup:hover circle,
+.pointGroup.isLinked rect:not(.hitbox),
+.pointGroup.isLinked circle {
+    opacity: 1;
+    stroke: #0f172a;
+    stroke-width: 2;
+}
+
+.hitbox {
+    fill: #ffffff;
+    opacity: 0;
+    pointer-events: all;
+}
+
+.pointGroup:hover .hitbox,
+.pointGroup.isLinked .hitbox {
+    opacity: 0.7;
+}
+
+.gridLine {
+    stroke: #e5ebf3;
+}
+
+.refLine {
+    stroke: #64748b;
+    stroke-dasharray: 5 5;
+}
+
+.axisText,
+.axisTitle,
+.labelText,
+.valueText,
+.inbarText,
+.cellText,
+.lensText {
+    fill: #172033;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+.axisText,
+.axisTitle {
+    fill: var(--muted);
+    text-transform: uppercase;
+}
+
+.labelText {
+    font-weight: 800;
+}
+
+.inbarText,
+.cellText,
+.lensText {
+    fill: #ffffff;
+    paint-order: stroke;
+    stroke: #475569;
+    stroke-width: 2px;
+}
+
+.tooltip {
+    min-width: 160px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgb(255 255 255 / 0.96);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+}
+
+.hoverTooltip {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.detail {
+    min-width: 0;
+    height: var(--detail-height, 176px);
+    overflow: hidden;
+}
+
+.detail .tooltip {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.tooltipContent {
+    opacity: 0;
+}
+
+.tooltipContent.isVisible {
+    opacity: 1;
+}
+
+.tooltipTitle {
+    margin-bottom: 8px;
+    color: var(--heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.tooltipRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #475569;
+    font-size: 0.84rem;
+    line-height: 1.25;
+}
+
+.tooltipRow strong {
+    flex: 0 0 auto;
+    color: var(--heading);
+    font-weight: 700;
+    text-align: right;
+}
+
+.tooltipRow + .tooltipRow {
+    margin-top: 4px;
+}
+
+.tooltipKey {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    gap: 6px;
+}
+
+.tooltipKey svg {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+}
+
+.emptyState {
+    display: grid;
+    place-items: center;
+    min-height: calc(100vh - var(--nav-height));
+    padding: 24px;
+    color: var(--muted);
+}
+
+@media (max-width: 760px) {
+    .content {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+}

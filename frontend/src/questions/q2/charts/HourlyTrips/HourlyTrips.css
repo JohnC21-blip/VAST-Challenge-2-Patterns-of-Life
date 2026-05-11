@@ -1,0 +1,7 @@
+.tripsChart {
+    overflow: visible;
+}
+
+.tripsChart .netBaseline {
+    stroke-dasharray: 3 4;
+}

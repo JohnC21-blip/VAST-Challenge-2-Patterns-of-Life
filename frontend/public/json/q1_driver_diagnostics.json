@@ -1,0 +1,120 @@
+{
+  "bounds": {
+    "width": 1076,
+    "height": 1144
+  },
+  "method": {
+    "segmentation": "dominant-driver contiguous grid regions",
+    "unit": "80x80 map grid cell",
+    "drivers": {
+      "residential": "apartments / total",
+      "commercial": "(jobs + employers) / total",
+      "leisure": "(schools + restaurants + pubs) / total",
+      "mixed": "no driver clears the dominance threshold"
+    },
+    "dominanceMinShare": 0.45,
+    "dominanceMargin": 0.12,
+    "smallFragmentHandling": "small adjacent components are merged into the strongest neighboring region"
+  },
+  "districtCount": 7,
+  "areas": [
+    {
+      "id": "area-1",
+      "name": "NorthWest Residential District",
+      "areaType": "residential",
+      "cells": 8,
+      "total": 255,
+      "homeShare": 0.8118,
+      "workShare": 0.1804,
+      "leisureShare": 0.0078,
+      "jobsPerApartment": 0.18,
+      "medianRent": 772.46,
+      "medianWage": 18.34,
+      "driver": "residential"
+    },
+    {
+      "id": "area-2",
+      "name": "NorthWest Commercial District",
+      "areaType": "commercial",
+      "cells": 12,
+      "total": 718,
+      "homeShare": 0.3454,
+      "workShare": 0.6435,
+      "leisureShare": 0.0111,
+      "jobsPerApartment": 1.56,
+      "medianRent": 854.06,
+      "medianWage": 14.85,
+      "driver": "commercial"
+    },
+    {
+      "id": "area-3",
+      "name": "Central Commercial District",
+      "areaType": "commercial",
+      "cells": 23,
+      "total": 991,
+      "homeShare": 0.2916,
+      "workShare": 0.6963,
+      "leisureShare": 0.0121,
+      "jobsPerApartment": 2.01,
+      "medianRent": 840.72,
+      "medianWage": 14.11,
+      "driver": "commercial"
+    },
+    {
+      "id": "area-4",
+      "name": "North Residential District",
+      "areaType": "residential",
+      "cells": 9,
+      "total": 237,
+      "homeShare": 0.6118,
+      "workShare": 0.3797,
+      "leisureShare": 0.0084,
+      "jobsPerApartment": 0.52,
+      "medianRent": 788.75,
+      "medianWage": 14.7,
+      "driver": "residential"
+    },
+    {
+      "id": "area-5",
+      "name": "East Residential District",
+      "areaType": "residential",
+      "cells": 15,
+      "total": 172,
+      "homeShare": 0.8081,
+      "workShare": 0.1802,
+      "leisureShare": 0.0116,
+      "jobsPerApartment": 0.19,
+      "medianRent": 821.71,
+      "medianWage": 16.52,
+      "driver": "residential"
+    },
+    {
+      "id": "area-6",
+      "name": "Central Residential District",
+      "areaType": "residential",
+      "cells": 18,
+      "total": 524,
+      "homeShare": 0.7672,
+      "workShare": 0.2195,
+      "leisureShare": 0.0134,
+      "jobsPerApartment": 0.24,
+      "medianRent": 781.2,
+      "medianWage": 14.34,
+      "driver": "residential"
+    },
+    {
+      "id": "area-7",
+      "name": "SouthEast Commercial District",
+      "areaType": "commercial",
+      "cells": 12,
+      "total": 237,
+      "homeShare": 0.3671,
+      "workShare": 0.6203,
+      "leisureShare": 0.0127,
+      "jobsPerApartment": 1.43,
+      "medianRent": 883.35,
+      "medianWage": 16.84,
+      "driver": "commercial"
+    }
+  ]
+}

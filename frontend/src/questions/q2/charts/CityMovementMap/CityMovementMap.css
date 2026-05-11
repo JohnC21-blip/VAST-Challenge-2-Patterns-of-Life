@@ -1,0 +1,199 @@
+.mapFrame {
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    place-items: stretch;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.mapSvg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding: 2px 2px 0;
+    justify-self: center;
+    align-self: center;
+    background: #ffffff;
+}
+
+.mapBackground {
+    fill: #ffffff;
+}
+
+.mapImage {
+    filter: grayscale(100%);
+    opacity: 1;
+}
+
+.mapImage.isActivity {
+    filter: none;
+    opacity: 1;
+}
+
+.buildingFabric path {
+    stroke: rgb(15 23 42 / 0.24);
+    stroke-width: 0.85;
+}
+
+.corridor,
+.mapPoint,
+.pressurePoint {
+    cursor: pointer;
+    transition: filter var(--motion-fast) var(--motion-ease),
+    opacity var(--motion-fast) var(--motion-ease),
+    fill var(--motion-fast) var(--motion-ease),
+    stroke var(--motion-fast) var(--motion-ease),
+    stroke-width var(--motion-fast) var(--motion-ease);
+}
+
+.mapPoint,
+.pressurePoint {
+    paint-order: stroke;
+}
+
+.mapPoint:hover,
+.pressurePoint:hover {
+    opacity: 1;
+    stroke: #0f172a;
+    stroke-width: 3;
+}
+
+.corridor.isSelected,
+.mapPoint.isSelected,
+.pressurePoint.isSelected {
+    filter: url("#q2-map-selection-glow");
+    opacity: 1;
+}
+
+.corridor.isHovered,
+.mapPoint.isHovered,
+.pressurePoint.isHovered {
+    opacity: 1;
+}
+
+.corridor.isSelected,
+.corridor.isHovered {
+    stroke-linecap: round;
+}
+
+.corridor:not(.isSelected):not(.isHovered) {
+    filter: none;
+}
+
+.trafficCar {
+    opacity: var(--car-opacity);
+    filter: url("#q2-activity-glow");
+    pointer-events: none;
+}
+
+.trafficCarBody {
+    fill: #f8fafc;
+    stroke: #64748b;
+    stroke-width: 1.1;
+}
+
+.trafficCarCabin {
+    fill: #475569;
+}
+
+.trafficCarLight {
+    fill: #c026d3;
+}
+
+.corridor.isMuted,
+.mapPoint.isMuted,
+.pressurePoint.isMuted {
+    opacity: 0.28;
+}
+
+.mapTooltip {
+    position: absolute;
+    z-index: 3;
+    top: 8px;
+    right: 8px;
+    width: 222px;
+    height: 136px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.mapTooltip .tooltipContent {
+    opacity: 1;
+    transition: none;
+}
+
+.mapTooltip .tooltipTitle {
+    height: 18px;
+    margin-bottom: 7px;
+    font-size: 0.84rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mapTooltip .tooltipRow {
+    height: 17px;
+    font-size: 0.78rem;
+    min-width: 0;
+}
+
+.mapTooltip .tooltipRow strong {
+    max-width: 92px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mapTooltip .tooltipRow:nth-child(5) {
+    align-items: flex-start;
+    height: 34px;
+}
+
+.mapTooltip .tooltipRow:nth-child(5) strong {
+    display: -webkit-box;
+    max-width: 130px;
+    line-height: 1.15;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.cityMovementMapLegend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 9px;
+    width: 100%;
+    min-height: 28px;
+    padding: 5px 8px 0;
+    pointer-events: none;
+}
+
+.cityMovementMapLegend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--muted);
+    font-size: 0.66rem;
+    font-weight: 760;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.cityMovementMapLegend svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+}
+
+.cityMovementMapLegend svg > * {
+    paint-order: stroke;
+}

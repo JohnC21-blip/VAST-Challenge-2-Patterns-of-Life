@@ -1,0 +1,32 @@
+.locationPressureHeatmap {
+    overflow: visible;
+}
+
+.pressureHourCell {
+    transition: opacity var(--motion-fast) var(--motion-ease);
+}
+
+.pressureHourMarker,
+.pressureLocationMarker {
+    fill: none;
+    pointer-events: none;
+    vector-effect: non-scaling-stroke;
+}
+
+.pressureHourMarker.isSelected,
+.pressureHourMarker.isHovered,
+.pressureLocationMarker.isSelected,
+.pressureLocationMarker.isHovered {
+    stroke: #0f172a;
+    stroke-width: 2;
+}
+
+.pressureLocationHitArea {
+    cursor: pointer;
+    fill: transparent;
+    pointer-events: all;
+}
+
+.pressureLocationLabel {
+    font-size: 0.68rem;
+}

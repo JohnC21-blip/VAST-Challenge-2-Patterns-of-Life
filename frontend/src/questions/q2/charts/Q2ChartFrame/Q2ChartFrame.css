@@ -1,0 +1,44 @@
+.chartSvg {
+    display: block;
+    width: min(100%, var(--chart-width, 760px));
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.frameCompact {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+}
+
+.frameCompact.hasDetail {
+    grid-template-rows: minmax(0, 1fr) var(--detail-height, 116px);
+    gap: 8px;
+}
+
+.visual {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.detailCompact {
+    min-width: 0;
+    height: var(--detail-height, 116px);
+    overflow: hidden;
+}
+
+.detailCompact .tooltip {
+    height: 100%;
+    min-height: 0;
+}

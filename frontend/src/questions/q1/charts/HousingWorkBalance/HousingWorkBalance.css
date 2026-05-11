@@ -1,0 +1,7 @@
+.balancePanel {
+    grid-area: balance;
+}
+
+.balanceChart.hasDetail {
+    --detail-height: 244px;
+}

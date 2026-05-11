@@ -1,0 +1,14 @@
+.idea/
+backend/__pycache__/
+__pycache__/
+*.pyc
+
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+frontend/public/VAST-Challenge-2022/Datasets/**
+!frontend/public/VAST-Challenge-2022/Datasets/Attributes/
+frontend/public/VAST-Challenge-2022/Datasets/Attributes/*
+!frontend/public/VAST-Challenge-2022/Datasets/Attributes/Buildings.csv
+!frontend/public/VAST-Challenge-2022/Datasets/Attributes/Participants.csv
